@@ -1,0 +1,66 @@
+# =====================================================================
+# AI Search (GEO) & Search Engine Crawler Permissions — NovaPulse India
+# =====================================================================
+
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+Disallow: /admin/
+Disallow: /config/
+
+User-agent: OAI-SearchBot
+Allow: /
+Allow: /llms.txt
+Disallow: /admin/
+Disallow: /config/
+
+User-agent: ChatGPT-User
+Allow: /
+Allow: /llms.txt
+Disallow: /admin/
+Disallow: /config/
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+Disallow: /admin/
+Disallow: /config/
+
+User-agent: anthropic-ai
+Allow: /
+Allow: /llms.txt
+Disallow: /admin/
+Disallow: /config/
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+Disallow: /admin/
+Disallow: /config/
+
+User-agent: Google-Extended
+Allow: /
+Allow: /llms.txt
+Disallow: /admin/
+Disallow: /config/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /config/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /config/
+
+User-agent: *
+Allow: /
+Allow: /llms.txt
+Disallow: /admin/
+Disallow: /config/
+Disallow: /database/
+
+Sitemap: https://landingpage.buildmyngo.online/sitemap.xml
+# LLMs Context Document: https://landingpage.buildmyngo.online/llms.txt
+

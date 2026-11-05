@@ -1,0 +1,552 @@
+/* ==========================================================================
+   Dynamic E-Commerce Promotional Landing Page Styles
+   Core Web Vitals Compliant: Zero CLS (0.000), GPU translate3d, Paint Containment
+   ========================================================================== */
+
+:root {
+  --brand-primary: #4f46e5;
+  --brand-primary-dark: #3730a3;
+  --brand-accent: #f97316;
+  --brand-dark: #0f172a;
+  --brand-slate: #475569;
+  --brand-light: #f8fafc;
+  --card-radius: 1.25rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--brand-dark);
+  background-color: #ffffff;
+  position: relative;
+}
+
+.page-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Promo Top Bar — Pre-reserved min-height & countdown space for Zero CLS */
+.promo-bar {
+  background: linear-gradient(90deg, #0f172a 0%, var(--brand-primary) 50%, #0f172a 100%);
+  color: #fff;
+  font-size: 0.84rem;
+  padding: 0.5rem 0.75rem;
+  min-height: 40px;
+  position: relative;
+  z-index: 1040;
+}
+
+.promo-bar-text {
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.countdown-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 0.15rem 0.65rem;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  min-width: 155px;
+  min-height: 24px;
+}
+
+#promoCountdown {
+  display: inline-block;
+  min-width: 122px;
+  text-align: center;
+}
+
+/* Sticky Glass Navbar */
+.landing-navbar {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  min-height: 68px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.navbar-brand-logo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--brand-dark);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.navbar-brand-logo span {
+  color: var(--brand-primary);
+}
+
+/* Entity Disambiguation Sub-Badge */
+.entity-disambiguation-pill {
+  font-size: 0.72rem;
+  color: #64748b;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 0.18rem 0.65rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* GPU-Composited Buttons (transform: translate3d & opacity only) */
+.btn-buy-primary {
+  background: linear-gradient(135deg, var(--brand-primary) 0%, #6366f1 100%);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.4);
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
+}
+
+.btn-buy-primary:hover,
+.btn-buy-primary:focus {
+  color: #fff;
+  transform: translate3d(0, -2px, 0);
+  opacity: 0.96;
+}
+
+.btn-buy-accent {
+  background: linear-gradient(135deg, var(--brand-accent) 0%, #ea580c 100%);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.85rem 1.75rem;
+  box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.42);
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
+}
+
+.btn-buy-accent:hover,
+.btn-buy-accent:focus {
+  color: #fff;
+  transform: translate3d(0, -2px, 0);
+  opacity: 0.96;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  padding: 3.5rem 0 4rem;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(79, 70, 229, 0.09) 0%, transparent 45%),
+    radial-gradient(circle at 88% 80%, rgba(249, 115, 22, 0.09) 0%, transparent 45%),
+    linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  overflow: hidden;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(79, 70, 229, 0.1);
+  color: var(--brand-primary);
+  border: 1px solid rgba(79, 70, 229, 0.2);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  max-width: 100%;
+}
+
+.hero-title {
+  font-size: clamp(1.85rem, 4.8vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.hero-title-highlight {
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-visual-wrapper {
+  position: relative;
+  min-height: 280px;
+}
+
+.hero-main-img {
+  width: 100%;
+  aspect-ratio: 640 / 450;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  box-shadow: 0 22px 45px -12px rgba(15, 23, 42, 0.2);
+  display: block;
+}
+
+.hero-floating-card {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  max-width: 340px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.15);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  contain: layout paint;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Feature / Benefit Cards */
+.benefit-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--card-radius);
+  padding: 1.5rem;
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease;
+}
+
+.benefit-card:hover {
+  transform: translate3d(0, -4px, 0);
+}
+
+.benefit-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(79, 70, 229, 0.1);
+  color: var(--brand-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+}
+
+/* Spotlight Flagship Product Section */
+.spotlight-section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  color: #ffffff;
+  border-radius: 1.75rem;
+  padding: 2.5rem;
+  box-shadow: 0 24px 50px -15px rgba(15, 23, 42, 0.35);
+}
+
+.spotlight-media-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.spotlight-main-img {
+  width: 100%;
+  height: 300px;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 1rem;
+  display: block;
+}
+
+/* Quick-View Modal Media Panel (Landscape Image — No Side Cropping) */
+.qv-main-img {
+  width: 100%;
+  height: 215px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.qv-thumb {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: 2px solid #cbd5e1;
+  opacity: 0.72;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.qv-thumb.active,
+.qv-thumb:hover {
+  opacity: 1;
+  border-color: var(--brand-primary);
+  transform: translate3d(0, 0, 0) scale3d(1.04, 1.04, 1);
+}
+
+.spotlight-thumb {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 0.65rem;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  opacity: 0.7;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.spotlight-thumb.active,
+.spotlight-thumb:hover {
+  opacity: 1;
+  border-color: var(--brand-accent);
+  transform: translate3d(0, 0, 0) scale3d(1.04, 1.04, 1);
+}
+
+.spotlight-spec-mini {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+/* Product Grid Cards */
+.category-pill-btn {
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  color: #334155;
+  white-space: nowrap;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.category-pill-btn.active,
+.category-pill-btn:hover {
+  background: var(--brand-primary);
+  color: #fff;
+  border-color: var(--brand-primary);
+  box-shadow: 0 6px 16px -4px rgba(79, 70, 229, 0.35);
+}
+
+.product-card {
+  border: 1px solid #e2e8f0;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  background: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translate3d(0, -5px, 0);
+}
+
+.product-img-wrap {
+  position: relative;
+  height: 235px;
+  min-height: 235px;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.product-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.product-card:hover .product-img-wrap img {
+  transform: translate3d(0, 0, 0) scale3d(1.05, 1.05, 1);
+}
+
+.product-badge-top {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+}
+
+.product-platform-tag {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  z-index: 2;
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--card-radius);
+  padding: 1.6rem;
+  height: 100%;
+  box-shadow: 0 8px 24px -8px rgba(15, 23, 42, 0.05);
+}
+
+/* Sticky Bottom Conversion Bar — Strict Layout/Paint Containment & GPU translate3d */
+.sticky-conversion-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  min-height: 62px;
+  z-index: 1035;
+  background: rgba(15, 23, 42, 0.96);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  padding: 0.65rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  contain: layout paint;
+  will-change: transform;
+  transform: translate3d(0, 100%, 0);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sticky-conversion-bar.visible {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Floating WhatsApp Button — Strict Layout/Paint Containment & GPU translate3d */
+.whatsapp-float {
+  position: fixed;
+  bottom: 78px;
+  right: 18px;
+  z-index: 1036;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.45);
+  text-decoration: none;
+  contain: layout paint;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  color: #fff;
+  transform: translate3d(0, -2px, 0) scale3d(1.06, 1.06, 1);
+}
+
+/* Mobile & Tablet Responsive Optimizations */
+@media (max-width: 991.98px) {
+  .hero-section {
+    padding: 2.25rem 0 2.75rem;
+  }
+  .spotlight-section {
+    padding: 1.75rem;
+  }
+  .landing-navbar .navbar-collapse {
+    background: #ffffff;
+    margin-top: 0.75rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .promo-bar {
+    font-size: 0.75rem;
+    padding: 0.45rem 0.5rem;
+  }
+  .hero-section {
+    padding: 1.75rem 0 2.25rem;
+  }
+  .hero-title {
+    font-size: 1.85rem;
+  }
+  .hero-cta-group {
+    width: 100%;
+  }
+  .hero-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1.2rem;
+    font-size: 0.95rem;
+  }
+  .spotlight-section {
+    padding: 1.25rem 1rem;
+    border-radius: 1.25rem;
+  }
+  .spotlight-main-img {
+    height: 220px;
+  }
+  .whatsapp-float {
+    width: 46px;
+    height: 46px;
+    font-size: 1.4rem;
+    right: 12px;
+    bottom: 70px;
+  }
+}
