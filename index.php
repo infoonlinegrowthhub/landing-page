@@ -160,10 +160,6 @@ $heroImageUrl = $hero ? resolveImageUrl($hero['hero_image']) : '';
               <i class="bi bi-lightning-charge-fill text-primary me-1"></i>
               <span itemprop="name"><?= e($siteName) ?></span>
             </a>
-            <span class="entity-disambiguation-pill d-none d-xl-inline-flex" title="<?= e($legalEntity . ' • Official Domain: ' . $canonicalDom) ?>">
-              <i class="bi bi-patch-check-fill text-primary"></i>
-              <span><?= e($canonicalDom) ?> • Official India Store</span>
-            </span>
           </div>
 
           <button
@@ -179,15 +175,15 @@ $heroImageUrl = $hero ? resolveImageUrl($hero['hero_image']) : '';
           </button>
 
           <div class="collapse navbar-collapse" id="mainNavbar">
-            <ul class="navbar-nav mx-auto mb-3 mb-lg-0 gap-lg-2 fw-medium">
+            <ul class="navbar-nav mx-auto mb-3 mb-lg-0 gap-lg-3 fw-medium">
               <?php if ($spotlightProduct): ?>
-                <li class="nav-item"><a class="nav-link" href="#spotlight">Spotlight</a></li>
+                <li class="nav-item"><a class="nav-link text-nowrap" href="#spotlight">Spotlight</a></li>
               <?php endif; ?>
-              <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
-              <li class="nav-item"><a class="nav-link" href="#benefits">Why Choose Us</a></li>
-              <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
-              <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-              <li class="nav-item"><a class="nav-link" href="#contact">Inquire</a></li>
+              <li class="nav-item"><a class="nav-link text-nowrap" href="#products">Products</a></li>
+              <li class="nav-item"><a class="nav-link text-nowrap" href="#benefits">Why Choose Us</a></li>
+              <li class="nav-item"><a class="nav-link text-nowrap" href="#reviews">Reviews</a></li>
+              <li class="nav-item"><a class="nav-link text-nowrap" href="#faq">FAQ</a></li>
+              <li class="nav-item"><a class="nav-link text-nowrap" href="#contact">Inquire</a></li>
             </ul>
 
             <div class="d-grid d-lg-flex align-items-center">
@@ -195,7 +191,7 @@ $heroImageUrl = $hero ? resolveImageUrl($hero['hero_image']) : '';
                 href="<?= e($heroTrackerUrl) ?>"
                 target="_blank"
                 rel="noopener"
-                class="btn btn-buy-primary btn-sm px-4 py-2 text-center"
+                class="btn btn-buy-primary btn-sm px-4 py-2 text-center text-nowrap"
               >
                 Buy Now <i class="bi bi-arrow-up-right-circle-fill ms-1"></i>
               </a>
@@ -225,14 +221,13 @@ $heroImageUrl = $hero ? resolveImageUrl($hero['hero_image']) : '';
                     <?php endif; ?>
                   </h1>
 
-                  <p class="text-secondary mb-3" style="font-size: 1.05rem; line-height: 1.65;">
+                  <p class="text-secondary mb-4" style="font-size: 1.05rem; line-height: 1.65;">
                     <?= e($hero['subtitle']) ?>
                   </p>
 
-                  <!-- Explicit Entity & Legal Identity Statement for AI Search / GEO -->
-                  <p class="fs-7 text-secondary mb-4">
-                    <i class="bi bi-building-check text-primary me-1"></i>
-                    Official direct-to-consumer product showcase by <strong><?= e($siteName) ?></strong> (<strong><?= e($legalEntity) ?></strong>, <a href="<?= e($baseUrl . '/') ?>" class="text-decoration-none"><?= e($canonicalDom) ?></a>) — promoting verified Indian smart audio &amp; lifestyle gear via instant partner payment links.
+                  <!-- Entity & Legal Identity Metadata for AI Search / GEO (Visually Hidden) -->
+                  <p class="visually-hidden">
+                    Official direct-to-consumer product showcase by <?= e($siteName) ?> (<?= e($legalEntity) ?>, <?= e($canonicalDom) ?>) — promoting verified Indian smart audio &amp; lifestyle gear via instant partner payment links.
                   </p>
 
                   <?php if (!empty($hero['price_tag'])): ?>
@@ -772,7 +767,7 @@ $heroImageUrl = $hero ? resolveImageUrl($hero['hero_image']) : '';
                   <div class="d-flex align-items-center gap-3 p-3 rounded-4 bg-white border">
                     <i class="bi bi-geo-alt-fill fs-3 text-danger"></i>
                     <div>
-                      <div class="fs-7 text-secondary">Registered Office (<?= e($legalEntity) ?>)</div>
+                      <div class="fs-7 text-secondary">Registered Office</div>
                       <div class="fw-semibold text-dark fs-7"><?= e(getSetting('contact_address')) ?></div>
                     </div>
                   </div>
@@ -836,7 +831,7 @@ $heroImageUrl = $hero ? resolveImageUrl($hero['hero_image']) : '';
               <a class="navbar-brand-logo text-white d-inline-block mb-2" href="<?= e($baseUrl . '/') ?>">
                 <i class="bi bi-lightning-charge-fill text-info me-1"></i><?= e($siteName) ?>
               </a>
-              <p class="text-white-50 fs-7 mb-2"><?= e($siteTagline) ?> • Official Domain: <strong><?= e($canonicalDom) ?></strong></p>
+              <p class="text-white-50 fs-7 mb-2"><?= e($siteTagline) ?></p>
               <p class="text-white-50 mb-0" style="font-size: 0.8rem;">
                 <i class="bi bi-shield-check text-success me-1"></i>
                 <?= e(getSetting('footer_disclaimer')) ?>
@@ -872,7 +867,7 @@ $heroImageUrl = $hero ? resolveImageUrl($hero['hero_image']) : '';
                 <?php endif; ?>
               </div>
               <div class="fs-7 text-white-50">
-                &copy; <?= date('Y') ?> <?= e($legalEntity) ?> (<?= e($siteName) ?>). All Rights Reserved.
+                &copy; <?= date('Y') ?> <?= e($siteName) ?>. All Rights Reserved.
               </div>
             </div>
           </div>
